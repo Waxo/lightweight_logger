@@ -3,16 +3,21 @@
 int main() {
 
     lightweight_logger *l = new lightweight_logger();
-    l->add_message("azeaze");
-    l->add_message("wxcwxc");
-    l->add_message("qsdqsd");
 
-    sleep(6);
-    l->add_message("vbnvbnvbn");
+    *l << lightweight_logger::lw_log_lvl::LW_ERROR << "azeazeaze";
+    for (int a = 0; a < 5000; a++) {
+        for (int b = 0; b < 1000000; b++) {
+        }
+    }
 
+    *l << lightweight_logger::lw_log_lvl::LW_INFO << "qsdqsdqsd";
 
-sleep(30);
+    for (int a = 0; a < 5000; a++) {
+        for (int b = 0; b < 1000000; b++) {
+        }
+    }
 
+    *l << lightweight_logger::lw_log_lvl::LW_WARNING << "wxcwxcwxc";
 
     delete l;
 
