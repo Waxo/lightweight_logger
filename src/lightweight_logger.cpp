@@ -81,11 +81,11 @@ lightweight_logger &lightweight_logger::operator<<(const lwl_lvl l_lvl) {
             case lwl_lvl::LWL_TRACE:
                 this->_current_log_lvl = "[TRACE]\t";
                 break;
-            case lwl_lvl::LWL_INFO:
-                this->_current_log_lvl = "[INFO]\t";
-                break;
             case lwl_lvl::LWL_DEBUG:
                 this->_current_log_lvl = "[DEBUG]\t";
+                break;
+            case lwl_lvl::LWL_INFO:
+                this->_current_log_lvl = "[INFO]\t";
                 break;
             case lwl_lvl::LWL_WARNING:
                 this->_current_log_lvl = "[WARNING]\t";

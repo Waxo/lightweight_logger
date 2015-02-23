@@ -25,8 +25,8 @@ public:
 
     enum class lwl_lvl {
         LWL_TRACE,
-        LWL_INFO,
         LWL_DEBUG,
+        LWL_INFO,
         LWL_WARNING,
         LWL_ERROR,
         LWL_VERBOSE,

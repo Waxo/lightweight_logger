@@ -19,10 +19,10 @@ Example lightweight_logger::lwl_lvl::LWL_TRACE
 Level   |  Name       | value
 --------|-------------|-------
 Trace   | LWL_TRACE   |  0
-Info    | LWL_INFO    |  1
-Debug   | LWL_DEBUG   |  2
+Debug   | LWL_DEBUG   |  1
+Info    | LWL_INFO    |  2
 Warning | LWL_WARNING |  3
-Error   | LWL_EROR    |  4
+Error   | LWL_ERROR   |  4
 Verbose | LWL_VERBOSE |  5
 Off     | LWL_OFF     |  6
 
