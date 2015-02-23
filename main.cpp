@@ -1,25 +1,30 @@
 #include <lightweight_logger.h>
 
-int main() {
+void example_use() {
+    lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE);
+//    lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE, "out");
 
-    lightweight_logger *l = new lightweight_logger();
+    *l << lightweight_logger::lwl_lvl::LWL_ERROR << "azeazeaze\t" << __FILE__ << std::endl;
 
-    *l << lightweight_logger::lw_log_lvl::LW_ERROR << "azeazeaze";
-    for (int a = 0; a < 5000; a++) {
+    for (int a = 0; a < 500; a++) {
         for (int b = 0; b < 1000000; b++) {
         }
     }
 
-    *l << lightweight_logger::lw_log_lvl::LW_INFO << "qsdqsdqsd";
+    *l << lightweight_logger::lwl_lvl::LWL_INFO << "qsdqsdqsd " << 12 << " " << std::endl;
 
-    for (int a = 0; a < 5000; a++) {
+    for (int a = 0; a < 500; a++) {
         for (int b = 0; b < 1000000; b++) {
         }
     }
 
-    *l << lightweight_logger::lw_log_lvl::LW_WARNING << "wxcwxcwxc";
+    *l << lightweight_logger::lwl_lvl::LWL_WARNING << "wxcwxcwxc" << std::endl;
 
     delete l;
+}
+
+int main() {
+    example_use();
 
     return 0;
 }

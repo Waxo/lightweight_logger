@@ -10,25 +10,42 @@
 
 #include <unistd.h>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <mutex>
 #include <future>
 #include <list>
-#include <sstream>
 #include <string>
+
+
+typedef std::ostream &(*ostream_manipulator)(std::ostream &);
 
 class lightweight_logger {
 public:
 
-    enum class lw_log_lvl {
-        LW_ERROR,
-        LW_WARNING,
-        LW_INFO
+    enum class lwl_lvl {
+        LWL_TRACE,
+        LWL_DEBUG,
+        LWL_INFO,
+        LWL_WARNING,
+        LWL_ERROR,
+        LWL_VERBOSE,
+        LWL_OFF
     };
 
-    lightweight_logger &operator<<(const lw_log_lvl l_lvl);
-    lightweight_logger &operator<<(const std::string s);
+    lightweight_logger &operator<<(const lwl_lvl l_lvl);
+    lightweight_logger &operator<<(const ostream_manipulator s);
 
-    lightweight_logger();
+    //basic types
+    lightweight_logger &operator<<(const std::string s);
+    lightweight_logger &operator<<(const int s);
+    lightweight_logger &operator<<(const float s);
+    lightweight_logger &operator<<(const double s);
+    lightweight_logger &operator<<(const short s);
+    lightweight_logger &operator<<(const char s);
+
+    lightweight_logger(const lwl_lvl &log_level);
+    lightweight_logger(const lwl_lvl &log_level, const std::string &filename);
     ~lightweight_logger();
 
 private:
@@ -40,12 +57,18 @@ private:
 
     std::list<std::string> _logged_messages;
 
+    lwl_lvl _level_log_setup;
+    lwl_lvl _level_current;
+    bool _log_in_file;
+    std::ofstream _output_file;
     std::string _current_log_lvl;
     std::string _current_time;
+    std::stringstream _current_log_text;
 
     void set_time();
     void thread_write_message();
 
+    lightweight_logger() = delete;
     lightweight_logger(const lightweight_logger &) = delete;
 
 };
