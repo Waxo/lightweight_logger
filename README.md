@@ -27,12 +27,13 @@ Verbose | LWL_VERBOSE |  5
 Off     | LWL_OFF     |  6
 
 #Output
-Standard ouput
+######Standard ouput
 ```cpp
 lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE);
 ```
 
-File named out.txt
+######File
+The file is named `named out.txt`
 ```cpp
 lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE, "out.txt");
 ```
