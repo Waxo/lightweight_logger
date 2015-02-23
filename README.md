@@ -26,7 +26,7 @@ Error   | LWL_EROR    |  4
 Verbose | LWL_VERBOSE |  5
 Off     | LWL_OFF     |  6
 
-#Output
+#Logging
 ######Standard ouput
 ```cpp
 lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE);
@@ -37,3 +37,5 @@ The file is named `named out.txt`
 ```cpp
 lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE, "out.txt");
 ```
+######Important
+`std::endl` is used to notify the logger that he can write the message on the chosen output
