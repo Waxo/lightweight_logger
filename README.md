@@ -13,8 +13,8 @@ delete l;
 
 #Logs Levels
 
-Prefix lightweight_logger::lwl_lvl::
-Example lightweight_logger::lwl_lvl::LWL_TRACE
+Prefix lightweight_logger::lwl_lvl::  
+Example ```lightweight_logger::lwl_lvl::LWL_TRACE```
 
 Level   |  Name       | value
 --------|-------------|-------
