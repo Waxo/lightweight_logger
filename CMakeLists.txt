@@ -10,8 +10,8 @@ set(INCLUDE_DIR ./include)
 include_directories(${INCLUDE_DIR})
 
 set(SOURCE_FILES
-    main.cpp
-    ./src/lightweight_logger.cpp
+  main.cc
+  src/lightweight_logger.cc
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
