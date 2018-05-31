@@ -4,14 +4,14 @@ LightWeight and multithreaded logger in CPP11
 This logger proposes 6 levels + off for logs.
 Output in file or standard
 
-#Example usage
+# Example usage
 ```cpp
 lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE);
 *l << lightweight_logger::lwl_lvl::LWL_ERROR << "something to log" << std::endl;
 delete l;
 ```
 
-#Logs Levels
+# Logs Levels
 
 Prefix lightweight_logger::lwl_lvl::  
 Example ```lightweight_logger::lwl_lvl::LWL_TRACE```
@@ -26,16 +26,16 @@ Error   | LWL_ERROR   |  4
 Verbose | LWL_VERBOSE |  5
 Off     | LWL_OFF     |  6
 
-#Logging
-######Standard ouput
+# Logging
+###### Standard ouput
 ```cpp
 lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE);
 ```
 
-######File
+###### File
 The file is named `named out.txt`
 ```cpp
 lightweight_logger *l = new lightweight_logger(lightweight_logger::lwl_lvl::LWL_TRACE, "out.txt");
 ```
-######Important
+###### Important
 `std::endl` is used to notify the logger that he can write the message on the chosen output
